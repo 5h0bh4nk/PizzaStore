@@ -10,8 +10,7 @@ function Checkout({ingredients}) {
            <div>
                 <h1>My toppings</h1>
                 {Object.keys(ingredients).map((topping)=>{
-                    if (ingredients[topping])
-                    return <p>{topping[0].toUpperCase()+topping.substr(1)}</p>;
+                    return ingredients[topping] && (<p>{topping[0].toUpperCase()+topping.substr(1)}</p>);
                 })}
 
                 <button onClick={()=>setSuccess(true)}>
